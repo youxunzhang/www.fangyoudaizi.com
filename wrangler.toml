@@ -8,21 +8,7 @@ publish = "."
 [build.environment]
 NODE_VERSION = "18"
 
-[[redirects]]
-from = "/*.htm"
-to = "/$1"
-status = 301
-
-[[redirects]]
-from = "/category/*"
-to = "/archives/category/$1"
-status = 301
-
-[[redirects]]
-from = "/author/*"
-to = "/archives/author/$1"
-status = 301
-
+# Simplified redirects to avoid loops
 [[redirects]]
 from = "/wp-admin/*"
 to = "/"
@@ -30,5 +16,30 @@ status = 301
 
 [[redirects]]
 from = "/wp-login.php*"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/feed"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/comments/feed"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/search/*"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/xmlrpc.php*"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/wp-json/*"
 to = "/"
 status = 301
