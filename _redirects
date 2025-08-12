@@ -1,7 +1,7 @@
 # Cloudflare Pages redirects for WordPress static export
 # Handle WordPress permalink structure
 
-# Redirect .htm extensions to clean URLs
+# Redirect .htm extensions to clean URLs (remove .htm extension)
 /*.htm /$1 301
 
 # Handle category pages
@@ -16,12 +16,12 @@
 # Handle pagination
 /page/* /page/$1 301
 
-# Handle search
-/?s=* /search/$1 301
+# Handle search - redirect to home page since search functionality won't work in static export
+/?s=* / 301
 
-# Handle feed URLs
-/feed /feed.xml 301
-/comments/feed /comments-feed.xml 301
+# Handle feed URLs - redirect to home
+/feed / 301
+/comments/feed / 301
 
 # Handle wp-admin and wp-login (redirect to home)
 /wp-admin/* / 301
@@ -30,3 +30,9 @@
 # Handle XML-RPC and other WordPress endpoints
 /xmlrpc.php* / 301
 /wp-json/* / 301
+
+# Handle direct search URLs
+/search/* / 301
+
+# Catch-all for any other WordPress URLs
+/wp-* / 301
