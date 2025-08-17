@@ -1,21 +1,4 @@
-# Cloudflare Pages redirects for WordPress static export
-# Simplified redirects to avoid loops
-
-# Redirect WordPress admin and login pages to home
-/wp-admin/* / 301
-/wp-login.php* / 301
-
-# Redirect feed URLs to home
+# Minimal redirects to avoid loops
+/wp-admin / 301
+/wp-login.php / 301
 /feed / 301
-/comments/feed / 301
-
-# Redirect search to home
-/?s=* / 301
-/search/* / 301
-
-# Redirect XML-RPC to home
-/xmlrpc.php* / 301
-/wp-json/* / 301
-
-# Redirect other WordPress endpoints to home
-/wp-* / 301
